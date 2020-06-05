@@ -8,9 +8,9 @@
     $('#cliente').DataTable();
     $('#produto').DataTable();
 } );
-3 You get a
+
     </script>
-        Desenvolvido por ©‎Márcio Fernandes
+        
     </div>   
 	</body>
 </html>

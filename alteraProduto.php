@@ -3,7 +3,7 @@
   include 'db.php';
   include 'conexao.php';
   
-   $codproduto = $_POST['codproduto'];
+  $codproduto = $_GET['id'];
    $produto = buscaProduto($conexao,$codproduto);
    
 
@@ -11,7 +11,7 @@
   <h1  style="text-align: center;">Alteração de Produtos</h1> 
     <div class="form-group">  
     
-      <form name="alteraprod" action="editaProduto.php" method="post" class="form-group">
+      <form action="editaProduto.php" method="post" class="form-group">
       
         <div class="form-group">
         <input type="hidden" name="codproduto" value="<?=$produto['codproduto']?>">
@@ -26,12 +26,12 @@
     <div class="form-group">
       <label for="tipoproduto">Tipo</label>
     <select class="form-control form-control-lg" name="tipoproduto" value="<?=$produto['tipoproduto']?>">
-    <option selected>Selecione o tipo do produto</option>
+    <option >Selecione o tipo do produto</option>
     <option name="informatica">Informática</option>
     <option name="escritorio">Escritório</option>
     <option name="limpeza">Limpeza</option>
     </select> 
-   
+</div>
     <div class="form-group">
       <label for="precocompra">Preço de Compra</label>
       <input type="text" class="form-control" id="precocompra" name="precocompra" value="<?=$produto['precocompra']?>">

@@ -1,10 +1,11 @@
     <?php
-    include ('header.php');
-    include ('conexao.php');
+    include 'header.php';
+    include 'conexao.php';
+    include 'footer.php';
     ?>
     <?php
         function cadastrarProduto($conexao,$codproduto,$nomeproduto,$datacompra,$tipoproduto,$precocompra,$precovenda){
-            $query = "insert into produtos (codproduto,nomeproduto,datacompra,tipoproduto,precocompra,precovenda) 
+            $query = "INSERT INTO produtos (codproduto,nomeproduto,datacompra,tipoproduto,precocompra,precovenda) 
             VALUES ('{$codproduto}','{$nomeproduto}','{$datacompra}','{$tipoproduto}','{$precocompra}','{$precovenda}')";
             mysqli_query($conexao,$query);
         }
@@ -36,7 +37,7 @@
                         <td><?=$resultado['tipoproduto'] ?></td>
                         <td><?=$resultado['precocompra'] ?></td>
                         <td><?=$resultado['precovenda'] ?></td>
-                        <td><a class="btn btn-primary" href="altera.php?id=<?=$resultado['codproduto']?>">Alterar</a></td>
+                        <td><a class="btn btn-primary" href="alteraProduto.php?id=<?=$resultado['codproduto']?>">Alterar</a></td>
                         <form method="post" action="deletaProdutos.php">
                             <input type="hidden" name="codproduto" value="<?=$resultado['codproduto']?>">
                             <td><button class="btn btn-danger">Excluir</button></td>
@@ -47,11 +48,12 @@
                 } 
             }
             function deletarProduto($conexao,$codproduto){
-                mysqli_query($conexao,"delete from produtos where codproduto={$codproduto}");		
+                mysqli_query($conexao,"DELETE FROM produtos WHERE codproduto={$codproduto}");		
             }
-            function atualizarProduto($conexao,$nomeproduto,$datacompra,$tipoproduto,$precocompra,$precovenda){
-                mysqli_query($conexao, "update produto set nomeproduto='{$nomeproduto}',datacompra='{$datacompra}',tipoproduto='{$tipoproduto}',precocompra='{$precocompra},precovenda='{$precovenda}'
-                 where codproduto={$codproduto}");
+            function atualizarProduto($conexao,$codproduto,$nomeproduto,$datacompra,$tipoproduto,$precocompra,$precovenda){
+                $query = "UPDATE produtos SET codproduto='$codproduto',nomeproduto='{$nomeproduto}',datacompra='{$datacompra}',tipoproduto='{$tipoproduto}',precocompra='{$precocompra}',precovenda='{$precovenda}'
+                 WHERE codproduto='{$codproduto}'";
+                 mysqli_query($conexao,$query);
             }
             function buscaProduto($conexao,$codproduto){
                 $resultado = mysqli_query($conexao,"select * from produtos");
@@ -62,7 +64,7 @@
 
     <?php 
     function cadastrarCliente($conexao,$nomefantasia,$razaosocial,$tipocliente,$cpf_cnpj,$endereco,$complemento,$cidade,$estado,$cep){
-            $query = "insert into cliente VALUES
+            $query = "INSERT INTO cliente VALUES
             ('default','{$nomefantasia}','{$razaosocial}','{$tipocliente}','{$cpf_cnpj}','{$endereco}','{$complemento}','{$cidade}','{$estado}','{$cep}')";
             mysqli_query($conexao,$query);
         }
@@ -85,8 +87,8 @@
                     </thead>
                     <tbody>
         <?php 		
-                $cliente = mysqli_query($conexao,"select * from cliente");
-                while($resultado = mysqli_fetch_array($cliente)){
+                $clientes = mysqli_query($conexao,"select * from cliente");
+                while($resultado = mysqli_fetch_assoc($clientes)){
         ?>
                 
                         <tr>
@@ -98,7 +100,7 @@
                         <td><?=$resultado['cidade'] ?></td>
                         <td><?=$resultado['estado'] ?></td>
                         <td><?=$resultado['cep'] ?></td>
-                        <td><a  class="btn btn-primary" href="alterarProduto.php?id=<?=$resultado['Id']?>">Alterar</a></td>
+                        <td><a  class="btn btn-primary" href="alteraCliente.php?id=<?=$resultado['idcliente']?>">Alterar</a></td>
                         <form method="post" action="deletaClientes.php">
                             <input type="hidden" name="idcliente" value="<?=$resultado['idcliente']?>">
                             <td><button class="btn btn-danger">Remover</button></td>
@@ -107,15 +109,19 @@
                     <?php
             } 
         }
-        function deletarCliente($conexao, $idcliente){
-            mysqli_query($conexao,"delete from cliente where idcliente={$idcliente}");		
+        function deletarCliente($conexao,$idcliente){
+            mysqli_query($conexao,"DELETE FROM cliente WHERE idcliente={$idcliente}");		
         }
-        function atualizarCliente($conexao,$id,$nome,$idade,$cpf,$sexo){
-            mysqli_query($conexao, "update clientes set Nome='{$nome}',Idade={$idade},Cpf='{$cpf}',Sexo='{$sexo}' where Id={$id}");
+        function atualizarCliente($conexao,$idcliente,$nomefantasia,$razaosocial,$tipocliente,$cpf_cnpj,$endereco,$complemento,$cidade,$estado,$cep){
+            $query="UPDATE cliente SET nomefantasia='{$nomefantasia}',razaosocial='{$razaosocial}',tipocliente='{$tipocliente}',cpf_cnpj='{$cpf_cnpj}',endereco='{$endereco}',complemento='{$complemento}',cidade='{$cidade}',estado='{$estado}',cep='{$cep}' 
+            WHERE idcliente='{$idcliente}'";
+            mysqli_query($conexao,$query);
         }
-        function buscaCliente($conexao,$id){
-            $resultado = mysqli_query($conexao,"select * from clientes");
+        function buscaCliente($conexao,$idcliente){
+            $resultado = mysqli_query($conexao,"SELECT * From cliente");
             return mysqli_fetch_assoc($resultado);
-        }?>
+        }
+        ?>
         </tbody>
                 </table>
+                

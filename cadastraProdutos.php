@@ -12,5 +12,5 @@ $precovenda = $_POST['precovenda'];
 
 cadastrarProduto($conexao,$codproduto,$nomeproduto,$datacompra,$tipoproduto,$precocompra,$precovenda);
 echo "<h1>Produto Cadastrado com Sucesso</h1>";
-visualizarProdutos($conexao);
+
 ?>
