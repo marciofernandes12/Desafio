@@ -1,0 +1,16 @@
+body {
+    padding-top: 30px;
+    
+}
+
+.principal {
+    padding: 30px 10px;
+    text-align: left;
+}
+
+.final {
+    bottom: 0;
+        width: 90%;
+        text-align: center;
+        color: green;
+}
