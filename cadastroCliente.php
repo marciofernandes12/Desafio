@@ -8,12 +8,12 @@
       <form>
     <div class="form-group">
       <label for="nomefantasia">Nome Fantasia</label>
-      <input type="text" class="form-control" name="nomefantasia" placeholder="Digite o nome fantasia">
+      <input type="text" class="form-control" name="nomefantasia" placeholder="Digite o nome fantasia" required>
       
     </div>
     <div class="form-group">
       <label for="razaosocial">Razão Social</label>
-      <input type="text" class="form-control"  name="razaosocial" placeholder="Digite a razão social">
+      <input type="text" class="form-control"  name="razaosocial" placeholder="Digite a razão social" required>
       
     </div>
     <div class="form-group">
@@ -24,22 +24,22 @@
     <option name="juridica">Pessoa Jurídica(CNPJ)</option>
     </select> 
 
-    <div class="form-group">
+   <div class="form-group">
       <label for="cpf/cnpj">CPF/CNPJ</label>
-      <input type="text" class="form-control"  name="cpf_cnpj" placeholder="Digite o CPF ou CNPJ"> 
+      <input type="text" class="form-control"  name="cpf_cnpj" pattern="[0-9]+$" placeholder="Ex: 0000000000" maxlength="16" required> 
     </div>
     <div class="form-group">
       <label for="endereco">Endereço</label>
-      <input type="text" class="form-control" name="endereco" placeholder="Rua...">
+      <input type="text" class="form-control" name="endereco" placeholder="Rua..." required>
     </div>
     <div class="form-group">
       <label for="complemento">Complemento</label>
-      <input type="text" class="form-control" name="complemento" placeholder="Ex: Apartamento, Casa A, Quadra B">
+      <input type="text" class="form-control" name="complemento" placeholder="Ex: Apartamento, Casa A, Quadra B" required>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="cidade">Cidade</label>
-        <input type="text" class="form-control" name="cidade">
+        <input type="text" class="form-control" name="cidade" placeholder="Ex:Recife" required>
       </div>
         <div class="form-group col-md-4">
           <label for="estado">Estado</label>
@@ -77,7 +77,7 @@
       </div>
         <div class="form-group col-md-2">
           <label for="cep">CEP</label>
-          <input type="text" class="form-control" name="cep">
+          <input type="text" class="form-control" name="cep" pattern="[0-9]+$" placeholder="Ex: 00000000" maxlength="9" required>
         </div>
       </div>
     

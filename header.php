@@ -13,16 +13,21 @@
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a href="cadastroCliente.php" class="navbar-brand">Desafio Verdanatech</a>
+                        <a href="index.php" class="navbar-brand">Desafio Verdanatech</a>
                     </div>
                     <div>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a  class="nav-link" href="visualizar.php">Visualizar Produtos</a>
-                                
-                            </li>
+                                   <a  class="nav-link" href="visualizar.php">Visualizar Produtos</a>
+                                </li>
                             <li class="nav-item">
                                     <a class="nav-link" href="visualizarClientes.php">Visualizar Clientes</a>
+                            </li>	      				
+                            <li class="nav-item">
+                                    <a class="nav-link" href="cadastroCliente.php">Cadastro Clientes</a>
+                            </li>	      				
+                            <li class="nav-item">
+                                    <a class="nav-link" href="cadastroProdutos.php">Cadastro Produtos</a>
                             </li>	      				
                         </ul>
                         

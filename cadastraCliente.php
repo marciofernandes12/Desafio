@@ -13,4 +13,6 @@ $estado = $_POST['estado'];
 $cep = $_POST['cep'];
 
 cadastrarCliente($conexao,$nomefantasia,$razaosocial,$tipocliente,$cpf_cnpj,$endereco,$complemento,$cidade,$estado,$cep);
-echo "<h1>Cliente Cadastrado com Sucesso!</h1>";
+echo  "<script>alert('Cliente Cadastrado com Sucesso!');</script>";
+
+header('Location: visualizarClientes.php');

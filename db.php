@@ -51,12 +51,12 @@
                 mysqli_query($conexao,"DELETE FROM produtos WHERE codproduto={$codproduto}");		
             }
             function atualizarProduto($conexao,$codproduto,$nomeproduto,$datacompra,$tipoproduto,$precocompra,$precovenda){
-                $query = "UPDATE produtos SET codproduto='$codproduto',nomeproduto='{$nomeproduto}',datacompra='{$datacompra}',tipoproduto='{$tipoproduto}',precocompra='{$precocompra}',precovenda='{$precovenda}'
-                 WHERE codproduto='{$codproduto}'";
+                $query ="UPDATE produtos SET nomeproduto='{$nomeproduto}',datacompra='{$datacompra}',tipoproduto='{$tipoproduto}',precocompra='{$precocompra}',precovenda='{$precovenda}'
+                 WHERE codproduto={$codproduto}";
                  mysqli_query($conexao,$query);
             }
             function buscaProduto($conexao,$codproduto){
-                $resultado = mysqli_query($conexao,"select * from produtos");
+                $resultado = mysqli_query($conexao,"SELECT * from produtos WHERE codproduto={$codproduto}");
                 return mysqli_fetch_assoc($resultado);
             }?>
             </tbody>
@@ -113,12 +113,13 @@
             mysqli_query($conexao,"DELETE FROM cliente WHERE idcliente={$idcliente}");		
         }
         function atualizarCliente($conexao,$idcliente,$nomefantasia,$razaosocial,$tipocliente,$cpf_cnpj,$endereco,$complemento,$cidade,$estado,$cep){
-            $query="UPDATE cliente SET nomefantasia='{$nomefantasia}',razaosocial='{$razaosocial}',tipocliente='{$tipocliente}',cpf_cnpj='{$cpf_cnpj}',endereco='{$endereco}',complemento='{$complemento}',cidade='{$cidade}',estado='{$estado}',cep='{$cep}' 
-            WHERE idcliente='{$idcliente}'";
+            $query="UPDATE cliente SET nomefantasia='{$nomefantasia}',razaosocial='{$razaosocial}',
+            tipocliente='{$tipocliente}',cpf_cnpj='{$cpf_cnpj}',endereco='{$endereco}',complemento='{$complemento}',cidade='{$cidade}',estado='{$estado}',cep='{$cep}' 
+            WHERE idcliente={$idcliente}";
             mysqli_query($conexao,$query);
         }
         function buscaCliente($conexao,$idcliente){
-            $resultado = mysqli_query($conexao,"SELECT * From cliente");
+        $resultado = mysqli_query($conexao,"SELECT * from cliente WHERE idcliente={$idcliente}");
             return mysqli_fetch_assoc($resultado);
         }
         ?>

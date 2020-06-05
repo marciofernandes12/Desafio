@@ -1,7 +1,7 @@
 <?php
-include ("header.php"); 
-include ("db.php");
-include ("conexao.php");
+include 'header.php'; 
+include 'db.php';
+include 'conexao.php';
 	
 	visualizarCliente($conexao);	
  ?>
