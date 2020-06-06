@@ -23,7 +23,7 @@
                         <th>Preco Compra</th>
                         <th>Preço Venda</th>
                         <th>Alterar</th>
-                        <th>Excluir</th>
+                        <th>Remover</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,7 @@
                             <td><a class="btn btn-primary" href="alteraProduto.php?id=<?= $resultado['codproduto'] ?>">Alterar</a></td>
                             <form method="post" action="deletaProdutos.php">
                                 <input type="hidden" name="codproduto" value="<?= $resultado['codproduto'] ?>">
-                                <td><button class="btn btn-danger">Excluir</button></td>
+                                <td><button class="btn btn-danger">Remover</button></td>
                             </form>
                         </tr>
 
