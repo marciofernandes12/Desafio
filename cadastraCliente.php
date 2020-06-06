@@ -1,6 +1,6 @@
-<?php 
-    include 'db.php';
-    include 'conexao.php';
+<?php
+include 'db.php';
+include 'conexao.php';
 
 $nomefantasia = $_POST['nomefantasia'];
 $razaosocial = $_POST['razaosocial'];
@@ -12,7 +12,6 @@ $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 $cep = $_POST['cep'];
 
-cadastrarCliente($conexao,$nomefantasia,$razaosocial,$tipocliente,$cpf_cnpj,$endereco,$complemento,$cidade,$estado,$cep);
-echo  "<script>alert('Cliente Cadastrado com Sucesso!');</script>";
+cadastrarCliente($conexao, $nomefantasia, $razaosocial, $tipocliente, $cpf_cnpj, $endereco, $complemento, $cidade, $estado, $cep);
 
 header('Location: visualizarClientes.php');

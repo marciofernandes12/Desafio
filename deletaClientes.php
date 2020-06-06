@@ -1,10 +1,10 @@
-<?php 
-	include("header.php"); 
-	include("db.php");
-	include("conexao.php");
+<?php
 
-	$idcliente = $_POST['idcliente'];
+include 'db.php';
 
-	deletarCliente($conexao, $idcliente);
-	header("Location: visualizarClientes.php");
-	die();
+
+$idcliente = $_POST['idcliente'];
+
+deletarCliente($conexao, $idcliente);
+header("Location: visualizarClientes.php");
+die();

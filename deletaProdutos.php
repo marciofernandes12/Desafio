@@ -1,9 +1,9 @@
-<?php 
-	include("header.php"); 
-	include("db.php");
-	include("conexao.php");
+<?php
 
-	$codproduto = $_POST['codproduto'];
-	deletarProduto($conexao, $codproduto);
-	header("Location: visualizar.php");
-	die();
+include 'db.php';
+
+
+$codproduto = $_POST['codproduto'];
+deletarProduto($conexao, $codproduto);
+header("Location: visualizar.php");
+die();

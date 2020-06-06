@@ -1,7 +1,7 @@
 <?php 
-	include 'header.php'; 
+	
 	include 'db.php';
-	include 'conexao.php';
+	
 
 	
 	$nomeproduto = $_POST['nomeproduto'];
@@ -15,5 +15,3 @@
 
 	header('Location: visualizar.php');
 	die();
-
-?>

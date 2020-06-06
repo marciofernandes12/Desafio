@@ -1,10 +1,10 @@
 <?php
-include ("header.php"); 
-include ("db.php");
-include ("conexao.php");
+include "header.php";
+include "db.php";
+include "conexao.php";
 
-	
-	visualizarProdutos($conexao);	
- ?>
- <a class="btn btn-primary" href="cadastroProdutos.php">Back</a>
- <?php include ("footer.php");?>
+
+visualizarProdutos($conexao);
+?>
+<a class="btn btn-primary" href="cadastroProdutos.php">Voltar</a>
+<?php include("footer.php"); ?>
